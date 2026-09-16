@@ -11,13 +11,13 @@ Pas de build, pas de dépendances : ce sont des fichiers statiques.
 | `index.html` | Page unique |
 | `app.js` | Logique : navigation, sessions, répétition espacée, stats |
 | `style.css` | Thème sombre, pensé pour être utilisé d'une seule main |
-| `data/cours.js` | **Tout le contenu** (cours → chapitres → résumé, fiches, QCM) |
+| `data/*.js` | **Tout le contenu**, un fichier par cours (chapitres → résumé, fiches, QCM). Chaque fichier ajoute son cours à `window.COURSES` ; ajouter la balise `<script>` dans `index.html` et le chemin dans `sw.js`. |
 | `sw.js` | Service worker : met l'appli en cache pour le hors-ligne |
 | `vendor/katex/` | Rendu des formules LaTeX (copie locale de KaTeX 0.16.22, licence MIT) |
 
 ## Ajouter ou modifier du contenu
 
-1. Modifier `data/cours.js` (voir le format en haut du fichier).
+1. Modifier ou créer un fichier dans `data/` (voir le format dans les fichiers existants).
    - Les `id` doivent être uniques et **ne jamais changer** : la progression y est liée.
    - Pour les QCM, `bonne` est l'indice de la bonne réponse dans `choix`. L'ordre est mélangé à l'affichage.
 2. **Changer `VERSION` dans `sw.js`**, sinon les téléphones garderont l'ancienne version en cache.
