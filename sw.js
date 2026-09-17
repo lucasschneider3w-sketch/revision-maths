@@ -1,6 +1,6 @@
 // Service worker : met toute l'appli en cache pour qu'elle marche sans réseau.
 // ⚠️ Changer VERSION à chaque mise à jour du contenu ou du code.
-const VERSION = '2026-09-16-2';
+const VERSION = '2026-09-17-1';
 const CACHE = 'revision-maths-' + VERSION;
 
 const FONTS = [
